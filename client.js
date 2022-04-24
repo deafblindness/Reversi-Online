@@ -15,8 +15,8 @@ function start() {
 
 function onClick(e) {
   let rect = e.target.getBoundingClientRect();
-  x = e.clientX - rect.left;
-  y = e.clientY - rect.top;
+  let x = e.clientX - rect.left;
+  let y = e.clientY - rect.top;
 
   let pos = {x: 0, y: 0};
   pos[x] = floor(canvas.width / x);
