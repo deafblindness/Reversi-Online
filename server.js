@@ -32,7 +32,7 @@ class ServerGame extends Game {
     if (this.board.is_mate()) {
       let win = this.board.win_side();
       this.player.forEach(player => {
-        player.socket.emit('end', win});
+        player.socket.emit('end', win);
       });
     }
   }
