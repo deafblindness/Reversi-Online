@@ -5,7 +5,7 @@ const http = require('http');
 const path = require('path');
 const app = express();
 const server = http.Server(app);
-const io = require('socket.io').listen(server);
+const io = require('socket.io')(server);
 
 const Player = require('./player.js')
 const Game = require('./game.js');
@@ -59,6 +59,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/static/index.html'));
 });
 
-app.listen(3000, () => {
+server.listen(3000, () => {
   console.log("starting server on port 3000");
 });
