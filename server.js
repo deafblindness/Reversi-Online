@@ -3,13 +3,13 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
-const socketIO = require('socket.io');
+const app = express();
+const server = http.Server(app);
+const io = require('socket.io').listen(server);
+
 const Player = require('./player.js')
 const Game = require('./game.js');
 const Board = require('./board.js')
-const app = express();
-const server = http.Server(app);
-const io = socketIO(http);
 
 class ServerGame extends Game {
   constructor(player1, player2) {
