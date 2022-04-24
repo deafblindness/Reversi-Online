@@ -19,8 +19,11 @@ function onClick(e) {
   let y = e.clientY - rect.top;
 
   let pos = {x: 0, y: 0};
-  pos[x] = floor(canvas.width / x);
-  pos[y] = floor(canvas.height / y);
+  pos[x] = Math.floor(canvas.width / x);
+  pos[y] = Math.floor(canvas.height / y);
+
+  console.log('putting your click to server');
+  console.log(pos);
 
   socket.emit('put', pos);
 }
