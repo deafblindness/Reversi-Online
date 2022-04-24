@@ -9,7 +9,7 @@ const Game = require('./game.js');
 const Board = require('./board.js')
 const app = express();
 const server = http.Server(app);
-const io = socketIO.listen(server);
+const io = socketIO(http);
 
 class ServerGame extends Game {
   constructor(player1, player2) {
