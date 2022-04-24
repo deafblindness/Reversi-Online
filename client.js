@@ -26,7 +26,8 @@ function onClick(e) {
 }
 
 socket.on('put', data => {
-
+  console.log('your put was accepted');
+  console.log(data);
 });
 
 document.getElementById('start_button', start);
