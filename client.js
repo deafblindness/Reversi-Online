@@ -1,6 +1,6 @@
 'use strict';
 
-const Game = require('game.js');
+const Game = require('./game.js');
 const socket = io();
 const canvas = document.getElementById('board');
 const context = canvas.getContext('2d');
